@@ -121,6 +121,7 @@ open class ESTabBarItemContentView: UIView {
         let titleLabel = UILabel.init(frame: CGRect.zero)
         titleLabel.backgroundColor = .clear
         titleLabel.textColor = .clear
+        titleLabel.lineBreakMode = .byTruncatingMiddle
         titleLabel.font = UIFont.systemFont(ofSize: 10.0)
         titleLabel.textAlignment = .center
         return titleLabel
@@ -203,9 +204,9 @@ open class ESTabBarItemContentView: UIView {
         if !imageView.isHidden && !titleLabel.isHidden {
             titleLabel.sizeToFit()
             imageView.sizeToFit()
-            titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0,
+            titleLabel.frame = CGRect.init(x: 0.0,
                                            y: h - titleLabel.bounds.size.height - 1.0,
-                                           width: titleLabel.bounds.size.width,
+                                           width: w,
                                            height: titleLabel.bounds.size.height)
             imageView.frame = CGRect.init(x: (w - imageView.bounds.size.width) / 2.0,
                                           y: (h - imageView.bounds.size.height) / 2.0 - 6.0,
